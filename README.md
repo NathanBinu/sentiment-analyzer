@@ -52,6 +52,23 @@ With the explosion of user-generated content on Reddit, automatic sentiment anal
 
 ---
 
+## 5. Getting the Code
+
+```bash
+# SSH clone (we’ve already set up your SSH key)
+git clone git@github.com:NathanBinu/reddit-sentiment-analyzer.git
+cd reddit-sentiment-analyzer
+
+# Or HTTPS clone if you prefer:
+git clone https://github.com/NathanBinu/reddit-sentiment-analyzer.git
+```
+
+
+**We store the 3 big model files (baseline.pkl, vectorizer.pkl, best_model.pkl) in Git LFS. After you clone, please run:**
+```bash
+git lfs install        # only needs to be run once on your machine
+git lfs pull           # downloads the actual .pkl/.safetensors binaries
+```
 ## 5. Installation & Setup
 
 1. Clone repo  
@@ -110,10 +127,14 @@ python -m scripts/merge_data \
 #### Option A: 
 ```bash
 python -m scripts/preprocess_and_train
+# (Optional) Hyperparameter Tuning:
+python -m scripts/grid_search
 ```
+
     Outputs:
     models/baseline.pkl [Trained Classifier]
     models/vectorizer.pkl [TF-IDF Transformer]
+    models/best_model.pkl [Optional Hyperparameter Tuning]
 
 #### Option B:
 ```bash
