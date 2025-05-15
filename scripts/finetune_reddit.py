@@ -138,11 +138,11 @@ def main():
 
     # 10) Evaluate the final model on the test set
     metrics = trainer.evaluate()
-    print("✅ Final evaluation metrics:", metrics)
+    print("Final evaluation metrics:", metrics)
 
     # 11) Save the fine-tuned model to disk for later use in the app
     trainer.save_model(output_dir)
-    print(f"✅ Fine-tuned Reddit-BERT saved to {output_dir}")
+    print(f"Fine-tuned Reddit-BERT saved to {output_dir}")
 
 if __name__ == "__main__":
     main()
