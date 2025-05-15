@@ -69,7 +69,7 @@ git clone https://github.com/NathanBinu/reddit-sentiment-analyzer.git
 git lfs install        # only needs to be run once on your machine
 git lfs pull           # downloads the actual .pkl/.safetensors binaries
 ```
-## 5. Installation & Setup
+## 6. Installation & Setup
 
 1. Clone repo  
 
@@ -96,9 +96,9 @@ REDDIT_CLIENT_SECRET = "YOUR_CLIENT_SECRET"
 REDDIT_USER_AGENT    = "sentiment-analyzer-script by /u/YourRedditUsername"
 ```
 
-## 6. Usage
+## 7. Usage
 
-### 6.1 Fetch Posts  
+### 7.1 Fetch Posts  
 
 ```bash
 python -m scripts/fetch_reddit \
@@ -111,7 +111,7 @@ python -m scripts/fetch_reddit \
     --limit: Max posts to fetch
     --out: Where to save the CSV
 
-### 6.2 Merge Data  
+### 7.2 Merge Data  
 
 ```bash
 python -m scripts/merge_data \
@@ -122,7 +122,7 @@ python -m scripts/merge_data \
     --files: space-seperated list of input CSVs
     --out: combined output CSV
 
-### 6.3 Choose & Train Model  
+### 7.3 Choose & Train Model  
 
 #### Option A: 
 ```bash
@@ -143,7 +143,7 @@ python -m scripts/finetune_reddit
     Outputs:
     models/reddit-bert [fine-tuned weights & config]
 
-### 6.4 Hyperparameter Tuning  
+### 7.4 Hyperparameter Tuning  
 
 ```bash
 python -m scripts/grid_search
@@ -152,19 +152,19 @@ python -m scripts/grid_search
     models/best_model.pkl [Tuned Pipeline]
     Console logs showing best parameters, CV F₁ score, and test-set performance
 
-### 6.5 Fine-Tune Transformer   
+### 7.5 Fine-Tune Transformer   
 ```bash
 python -m scripts/finetune_reddit
 ```
     Outputs:
     Directory models/reddit-bert/ containing the fine-tuned model
 
-### 6.6 Launch Dashboard  
+### 7.6 Launch Dashboard  
 ```bash
 streamlit run app/streamlit_app.py
 ```
 
-## 7. Steps to run:
+## 8. Steps to run:
 
 ### Step 1: Enter your target Subreddit and Number of posts in the sidebar.
 ### Step 2: Click Analyze.
